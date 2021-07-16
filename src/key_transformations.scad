@@ -143,6 +143,11 @@ module front_legend(text, position=[0,0], size=undef) {
     children();
 }
 
+module secondary_legend(text, position=[0,0], size=undef) {
+    font_size = size == undef ? $font_size : size;
+    $legends = [for(L=[$legends, [[text, position, font_size]]], a=L) a];
+    children();
+}
 module bump(depth=undef) {
     $key_bump = true;
     $key_bump_depth = depth == undef ? $key_bump_depth : depth;
