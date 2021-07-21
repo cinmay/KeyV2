@@ -41,7 +41,7 @@ row = 0;
 //dcs_row(row) legend("K", position=[[1,1]] size=5) secondary_legend("5", size=3) front_legend("PrSc", size=frontLegendSize) 1u() key();
 //dcs_row(row) legend("K", position=[0,-0.75], size=5) secondary_legend("5%",position=[0.75,1], size=3) front_legend("PrSc",position=[0], size=frontLegendSize) 1u() key();
 
-
+/*
 fKeyTopLegends =    [ "U", "I", "O", "Q"];
 fKeySecondaryLegends = [ "7/", "8(", "9)", "@"];
 fKeyFrontLegends =  ["F8", "F9", "F10", "F2"];
@@ -53,7 +53,32 @@ frontLegends =  [ "PrSc",  "ScLo", "Vol-" ];
 translate_u(0,2)
 dcs_row(row) legend("Esc", position=[0,-0.75], size=4) front_legend("F1",position=fKeyPosition, size=fKeyLegendSize) 1u() key();
 
+*/
 
+//  legends = ["←", "↓", "→", "↑"];
+
+fkeys = [ ["W","↑","F3","DejaVu Sans Mono:style=Book"],
+          ["E","!","F4"],
+          ["R","[","F5"],
+          ["T","]","F6"],
+          ["Y","=","F7"],
+          ["U","7","F8"],
+          ["I","8","F9"],
+          ["P","*","F11"],
+          ["Å","+","F12"]
+        ];
+
+for (x =[0:len(fkeys)-1]) {
+  translate_u(x,0)
+  dcs_row(row)
+  legend(fkeys[x][0],position=[0,-0.75], size=legendSize)
+  secondary_legend(fkeys[x][1],position=[0.75,1], size=secondaryLegendsSize, font=fkeys[x][3])
+  front_legend(fkeys[x][2],position=fKeyPosition, size=fKeyLegendSize, font=fkeys[x][4])
+  1u()
+  key();
+} 
+
+/*
 for (x =[0:len(fKeyTopLegends)-1]) {
   translate_u(x,0)
   dcs_row(row)
@@ -73,6 +98,7 @@ for (x =[0:len(topLegends)-1]) {
   1u()
   key();
 } 
+*/
 
 /*
 dcs_row(row) legend("({", size=6) front_legend("Vol+", size=frontLegendSize) 1u() key();

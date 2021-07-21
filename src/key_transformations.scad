@@ -131,23 +131,27 @@ module flat_support() {
   children();
 }
 
-module legend(text, position=[0,0], size=undef) {
+module legend(text, position=[0,0], size=undef, font=undef) {
     font_size = size == undef ? $font_size : size;
-    $legends = [for(L=[$legends, [[text, position, font_size]]], a=L) a];
+    font_type = font == undef ? $font : font;
+    $legends = [for(L=[$legends, [[text, position, font_size, font_type]]], a=L) a];
     children();
 }
 
-module front_legend(text, position=[0,0], size=undef) {
+module front_legend(text, position=[0,0], size=undef, font=undef) {
     font_size = size == undef ? $font_size : size;
-    $front_legends = [for(L=[$front_legends, [[text, position, font_size]]], a=L) a];
+    font_type = font == undef ? $font : font;
+    $front_legends = [for(L=[$front_legends, [[text, position, font_size, font_type]]], a=L) a];
     children();
 }
 
-module secondary_legend(text, position=[0,0], size=undef) {
+module secondary_legend(text, position=[0,0], size=undef, font=undef) {
     font_size = size == undef ? $font_size : size;
-    $legends = [for(L=[$legends, [[text, position, font_size]]], a=L) a];
+    font_type = font == undef ? $font : font;
+    $legends = [for(L=[$legends, [[text, position, font_size, font_type]]], a=L) a];
     children();
 }
+
 module bump(depth=undef) {
     $key_bump = true;
     $key_bump_depth = depth == undef ? $key_bump_depth : depth;
