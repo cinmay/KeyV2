@@ -60,10 +60,13 @@ translate_u(0,2)
 dcs_row(row) legend("Esc", position=[0,-0.75], size=4) front_legend("F1",position=fKeyPosition, size=fKeyLegendSize) 1u() key();
 */
 
+/*
+// **** Tux ***
 translate_u(0,-1)
 dcs_row(row)
 secondary_legend("A",position=[0.1,0], size=8, font="Untitled1:style=Regular")
 1u() key();
+*/
 
 /*
 translate_u(0,2)
@@ -122,11 +125,21 @@ keys = [
 */
 
 keys = [
-              ["F","<"],
+              //["F","<"],
+               /*
               ["G",">"],
-              ["B","?"],
+              ["H","#"],
+              ["M","1!","g","Roboto:style=Regular","font bottons music:style=Regular"],
+              ["J","4","Ins"],
+              ["Æ","-","NuLc"],
+              ["Ø","/","Paus"]
+              */
+              ["B","?","¨^~"],
+              ["\"","0","f","Roboto:style=Regular","font bottons music:style=Regular"],
+              ["'",".","e","Roboto:style=Regular","font bottons music:style=Regular"],
 
 ];
+
 
 for (x =[0:len(keys)-1]) {
   translate_u(x,-2)
@@ -138,15 +151,34 @@ for (x =[0:len(keys)-1]) {
   key();
 } 
 
+keysDoubLegend = [
+              [",",";","2"],
+              [".",":","3"],
+              ["-","_",",","\\`´"],
+];
 
 
+for (x =[0:len(keysDoubLegend)-1]) {
+  translate_u(x,-1)
+  dcs_row(row)
+  legend(keysDoubLegend[x][1],position=[-1,-1], size=legendSize)
+  legend(keysDoubLegend[x][0],position=[-1,0], size=legendSize)
+  secondary_legend(keysDoubLegend[x][2],position=[0.75,0.9], size=secondaryLegendsSize, font=keysDoubLegend[x][4])
+  front_legend(keysDoubLegend[x][3],position=keyPosition, size=frontLegendSize, font=keysDoubLegend[x][5])
+  1u()
+  key();
+} 
+
+
+/*
 keysLargeSecondary = [
   
-              ["Z","Home"],
+
               ["X","PgUp"],
               ["C","PgDn"],
               ["V","End","q","Roboto:style=Regular","font bottons music:style=Regular"],
 ];
+
 
 
 for (x =[0:len(keysLargeSecondary)-1]) {
@@ -158,6 +190,8 @@ for (x =[0:len(keysLargeSecondary)-1]) {
   1u()
   key();
 } 
+*/
+
 
 /*
 1_5Keys = [
@@ -182,9 +216,8 @@ translate_u(-2 ,-4)
 secondary_legend("←", size=10, font="DejaVu Sans Mono:style=Book")
   1_5u()
   key();;
-
+*/
 1_25Keys = [
-              ["Shift"],
               ["Shift"],
               ["Ctrl"],
 ];
@@ -196,7 +229,7 @@ for (x =[0:len(1_25Keys)-1]) {
   1_25u()
   key();
 } 
-*/
+
 
 
 /*
