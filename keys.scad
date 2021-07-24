@@ -59,6 +59,12 @@ frontLegends =  [ "PrSc",  "ScLo", "Vol-" ];
 translate_u(0,2)
 dcs_row(row) legend("Esc", position=[0,-0.75], size=4) front_legend("F1",position=fKeyPosition, size=fKeyLegendSize) 1u() key();
 */
+
+translate_u(0,-1)
+dcs_row(row)
+secondary_legend("A",position=[0.1,0], size=8, font="Untitled1:style=Regular")
+1u() key();
+
 /*
 translate_u(0,2)
 dcs_row(row) legend("Alt", position=[0,-0.7], size=4)
@@ -98,8 +104,8 @@ for (x =[0:len(fkeys)-1]) {
   key();
 } 
 */
-/*
 
+/*
 keys = [
               ["A","←","CpLc","DejaVu Sans Mono:style=Book"],
               //["S","↓","","DejaVu Sans Mono:style=Book"],
@@ -113,7 +119,14 @@ keys = [
               ["Del"]
 
 ];
+*/
 
+keys = [
+              ["F","<"],
+              ["G",">"],
+              ["B","?"],
+
+];
 
 for (x =[0:len(keys)-1]) {
   translate_u(x,-2)
@@ -124,8 +137,29 @@ for (x =[0:len(keys)-1]) {
   1u()
   key();
 } 
-*/
 
+
+
+keysLargeSecondary = [
+  
+              ["Z","Home"],
+              ["X","PgUp"],
+              ["C","PgDn"],
+              ["V","End","q","Roboto:style=Regular","font bottons music:style=Regular"],
+];
+
+
+for (x =[0:len(keysLargeSecondary)-1]) {
+  translate_u(x,-3)
+  dcs_row(row)
+  legend(keysLargeSecondary[x][0],position=[0,-0.75], size=legendSize)
+  secondary_legend(keysLargeSecondary[x][1],position=[0,0.9], size=3.3, font=keysLargeSecondary[x][3])
+  front_legend(keysLargeSecondary[x][2],position=keyPosition, size=frontLegendSize, font=keysLargeSecondary[x][4])
+  1u()
+  key();
+} 
+
+/*
 1_5Keys = [
               ["Tab"],
               ["Enter"],
@@ -162,7 +196,7 @@ for (x =[0:len(1_25Keys)-1]) {
   1_25u()
   key();
 } 
-
+*/
 
 
 /*
