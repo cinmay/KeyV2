@@ -40,7 +40,9 @@ fKeyLegendSize = 4;
 fKeyPosition = [0,-0.5];
 row = 0;
 
-$stem_type = "rounded_cherry";
+//$stem_type = "box_cherry";
+$stem_rotation = 90;
+$stem_support_type = "disabled"; // [tines, brim, disabled]
 
 /*
 fKeyTopLegends =    [ "U", "I", "O", "Q"];
@@ -136,13 +138,13 @@ keys = [
 
 ];
 */
-
+/*
 translate_u(0,-1)
 dcs_row(row)
 legend("F", position=[0,-0.75], size=legendSize)
 secondary_legend("<",position=[0.75,0.9], size=secondaryLegendsSize)
 1u() key() {
-  translate([0,-5,0.5]) scale(1) import("assets/keybump.stl");
+  translate([0,-5,0.1]) scale(1) import("assets/keybump.stl");
 };
 
 translate_u(1,-1)
@@ -151,13 +153,15 @@ legend("J", position=[0,-0.75], size=legendSize)
 secondary_legend("4",position=[0.75,0.9], size=secondaryLegendsSize)
 front_legend("Ins",position=keyPosition, size=frontLegendSize)
 1u() key() {
-  translate([0,-5,0.5]) scale(1) import("assets/keybump.stl");
+  translate([0,-5,0.1]) scale(1) import("assets/keybump.stl");
 };
 
 keys = [
-              ["B","?","¨^~"],
+              //["B","?","¨^~"],
               ["\"","0","f","Roboto:style=Regular","font bottons music:style=Regular"],
               ["'",".","e","Roboto:style=Regular","font bottons music:style=Regular"],
+              ["(","{","n","Roboto:style=Regular","font bottons music:style=Regular"],
+              [")","}","o","Roboto:style=Regular","font bottons music:style=Regular"],
 ];
 
 
@@ -214,7 +218,7 @@ for (x =[0:len(keysLargeSecondary)-1]) {
 */
 
 
-/*
+
 1_5Keys = [
               ["Enter"],
               ["M1"],
