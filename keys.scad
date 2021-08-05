@@ -220,12 +220,10 @@ for (x =[0:len(keysLargeSecondary)-1]) {
 
 
 1_5Keys = [
-              ["Enter"],
+              //["Enter"],
               ["M1"],
-
-              ["Tab"],
-              ["Space"],
-              ["M1"]
+              //["Space"],
+              //["M1"]
 ];
 
 for (x =[0:len(1_5Keys)-1]) {
@@ -240,11 +238,12 @@ for (x =[0:len(1_5Keys)-1]) {
 translate_u(-2 ,-4)
  dcs_row(row) 
 secondary_legend("←", size=10, font="DejaVu Sans Mono:style=Book")
-  1_5u()
+  1_25u()
   key();;
 
-/*
+
 1_25Keys = [
+              ["Tab"],
               ["Shift"],
               ["Ctrl"],
 ];
@@ -256,8 +255,6 @@ for (x =[0:len(1_25Keys)-1]) {
   1_25u()
   key();
 } 
-
-*/
 
 
 
